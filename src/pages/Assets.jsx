@@ -80,7 +80,7 @@ function Assets() {
           </div>
           <button
             onClick={() => setShowForm(!showForm)}
-            className="bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 active:scale-[0.99] transition"
+            className="bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 active:scale-[0.99] transition cursor-pointer"
           >
             {showForm ? "Cancel" : "+ Add Asset"}
           </button>
