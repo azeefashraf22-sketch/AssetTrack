@@ -80,12 +80,13 @@ function Login() {
 
                     <form onSubmit={handleLogin} className="space-y-5">
                         <div>
-                            <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                            <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5" htmlFor="email">
                                 Email
                             </label>
                             <input
                                 type="email"
                                 required
+                                id="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
@@ -94,12 +95,13 @@ function Login() {
                         </div>
 
                         <div>
-                            <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                            <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5" htmlFor="password">
                                 Password
                             </label>
                             <input
                                 type="password"
                                 required
+                                id="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Enter your password"
