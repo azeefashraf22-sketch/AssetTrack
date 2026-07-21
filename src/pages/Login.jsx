@@ -53,10 +53,10 @@ function Login() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-50 font-poppins px-4 py-8">
-            <div className="flex w-full max-w-4xl bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden min-h-[580px]">
+            <div className="flex w-full max-w-4xl bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden min-h-145">
 
                 {/* LEFT SIDE - Elegant Blueprint & Branding */}
-                <div className="hidden md:flex flex-col justify-between w-1/2 bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-900 p-12 relative overflow-hidden">
+                <div className="hidden md:flex flex-col justify-between w-1/2 bg-linear-to-tr from-slate-950 via-slate-900 to-slate-900 p-12 relative overflow-hidden">
                     <div className="absolute inset-0 opacity-[0.05]" style={{
                         backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
                         backgroundSize: "24px 28px",
@@ -155,7 +155,7 @@ function Login() {
                         </div>
 
                         <button
-                            type="submit"
+                            type="submit"   
                             disabled={loading}
                             className="w-full bg-slate-900 text-white py-3 rounded-xl font-semibold text-sm hover:bg-slate-800 active:scale-[0.99] transition-all duration-150 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-slate-950/10"
                         >
@@ -166,9 +166,9 @@ function Login() {
 
                     <div className="mt-6 flex flex-col gap-3">
                         <div className="relative flex py-2 items-center">
-                            <div className="flex-grow border-t border-slate-200"></div>
-                            <span className="flex-shrink mx-4 text-slate-400 text-xs font-semibold uppercase tracking-wider">Gateways</span>
-                            <div className="flex-grow border-t border-slate-200"></div>
+                            <div className="grow border-t border-slate-200"></div>
+                            <span className="shrink mx-4 text-slate-400 text-xs font-semibold uppercase tracking-wider">Gateways</span>
+                            <div className="grow border-t border-slate-200"></div>
                         </div>
 
                         {/* Premium toggle switch button (MUI aesthetic but pure, lightweight Tailwind) */}

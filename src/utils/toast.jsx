@@ -1,46 +1,53 @@
-import toast from 'react-hot-toast';
-import { CheckCircle2, XCircle, Info, AlertTriangle } from 'lucide-react';
+import toast from "react-hot-toast";
+import { Check, X } from "lucide-react";
 
-const toastStyle = {
-    fontFamily: "'Poppins', sans-serif",
-    borderRadius: '16px',
-    background: '#ffffff',
-    color: '#1e293b', // slate-800
-    boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
-    border: '1px border-slate-100',
-    padding: '12px 20px',
-    fontSize: '14px',
-    fontWeight: '500',
-};
+const baseStyle =
+    "bg-white shadow-lg rounded-2xl px-4 py-3 flex items-center gap-3 min-w-[320px] border border-gray-100";
 
 export const showSuccessToast = (message) => {
-    toast.success(message, {
-        style: toastStyle,
-        icon: <CheckCircle2 className="text-emerald-500 animate-bounce" size={22} />,
-        duration: 3000,
-    });
+    toast.custom(
+        (t) => (
+            <div
+                className={`${baseStyle} transition-all duration-300 ${t.visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 -translate-y-6 scale-95"
+                    }`}
+            >
+                <div className="w-8 h-8 rounded-full bg-lime-500 flex items-center justify-center flex-shrink-0">
+                    <Check className="text-white" size={18} strokeWidth={3} />
+                </div>
+                <span className="text-[#3f3f46] text-[15px] font-medium font-poppins">
+                    {message}
+                </span>
+            </div>
+        ),
+        {
+            duration: 3000,
+            position: "top-center",
+        }
+    );
 };
 
 export const showErrorToast = (message) => {
-    toast.error(message, {
-        style: toastStyle,
-        icon: <XCircle className="text-red-500 animate-pulse" size={22} />,
-        duration: 4000,
-    });
-};
-
-export const showInfoToast = (message) => {
-    toast(message, {
-        style: toastStyle,
-        icon: <Info className="text-blue-500" size={22} />,
-        duration: 3000,
-    });
-};
-
-export const showWarningToast = (message) => {
-    toast(message, {
-        style: toastStyle,
-        icon: <AlertTriangle className="text-amber-500" size={22} />,
-        duration: 3500,
-    });
+    toast.custom(
+        (t) => (
+            <div
+                className={`${baseStyle} transition-all duration-300 ${t.visible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 -translate-y-6 scale-95"
+                    }`}
+            >
+                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+                    <X className="text-white" size={18} strokeWidth={3} />
+                </div>
+                <span className="text-[#3f3f46] text-[15px] font-medium font-poppins">
+                    {message}
+                </span>
+            </div>
+        ),
+        {
+            duration: 3000,
+            position: "top-center",
+        }
+    );
 };

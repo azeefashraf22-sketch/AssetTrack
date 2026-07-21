@@ -11,10 +11,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <>
-      {/* Toaster component globally active rahega */}
       <Toaster
-        position="top-right"
+        position="top-center"
         reverseOrder={false}
+        gutter={12}
+        containerStyle={{ top: 20 }}
       />
 
       <Routes>
